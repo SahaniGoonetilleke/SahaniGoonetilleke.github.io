@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .rightNext {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 95%;
+        left: 95%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .rightNext:hover {
+        background-color: red;
+    }
+    
+    .rightNext:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(10px);
+    }
+    
+    .leftPrev {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 95%;
+        left: 5%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .leftPrev:hover {
+        background-color: red;
+    }
+    
+    .leftPrev:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(-50px);
+    }
+    
+    .centerHome {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .centerHome:hover {
+        background-color: red;
+    }
+    
+    .centerHome:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(-50px);
+    }
+</style>
+
+<head>
+    <title>Electricity Utilization Narrative Visualization World Map Summary;</title>
+</head>
+
+<body style="background-color:powderblue;padding:0px 5px;">
+    <h1 style="text-align:center;color:blue;font-size:30px;"><b>&#128161;Map of Electric Power Consumption in kWh per capita &#128161;</b></h1>
+    <p style="text-align:left;font-size:20px;"><i><b>Exploration outcomes from scene 1 :</i></b>
+    </p>
+    <p>Key observations the user could be expected to interpret from exporing the first scene are summarized as follows.</p>
+    <p style="margin-left: 40px">&#9889; Iceland is the only country that reached the greater than 30,000 kWh per capita range and did so in 2014.</p>
+    <p style="margin-left: 40px">&#9889; USA, Canada, Norway and Swedan consistently had high electric power consumption per capita falling in the range of 10,000 to 30,000 kWh, throughout from 1990 to 2014</p>
+    <p style="margin-left: 40px">&#9889; China had a shift in categories in 3 consecutive 5 year periods, namely 2000, 2005 and 2010.</p>
+    <p style="margin-left: 40px">&#9889; Uzbekistan improved from less than 10,000kWh range to less than 5000kWh range from 1990 to 1995, but declined back to the former range by 2014.</p>
+    <p style="margin-left: 40px">&#9889; Most of the favourable countries (green) lie in Africa and South Asia.</p>
+    <p>You can re-visit scene 1 by pressing "Prev" button at the bottom left corner of your screen.<br></p>
+    <p>I was also able to zoom in and out of the webpage by using ctrl+scrolling on windows.</p>
+    <p>To continue on to scene 2 click the "Next" button at the bottom right corner of your screen.</p>
+    <p>To navigate back to the start of the narrative visualization, click the "Home" button.</p>
+</body>
+
+
+<div class="rightNext ">
+    <form method="get " action="./line3.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:large;padding: 15%; ">Next</button>
+    </form>
+</div>
+<div class="leftPrev ">
+    <form method="get " action="./map1990.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:large;padding: 15%; ">Prev</button>
+    </form>
+</div>
+<div class="centerHome ">
+    <form method="get " action="./index.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:small;padding: 5%; ">&#127968;Home</button>
+    </form>
+</div>
+
+</html>
