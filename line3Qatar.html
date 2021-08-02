@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    .rightNext {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 95%;
+        left: 95%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .rightNext:hover {
+        background-color: red;
+    }
+    
+    .rightNext:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(10px);
+    }
+    
+    .leftPrev {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 95%;
+        left: 5%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .leftPrev:hover {
+        background-color: red;
+    }
+    
+    .leftPrev:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(-50px);
+    }
+    
+    .centerHome {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 95%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.5s;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    .centerHome:hover {
+        background-color: red;
+    }
+    
+    .centerHome:active {
+        background-color: #3e8e41;
+        box-shadow: 5px 5px #666;
+        transform: translateX(-50px);
+    }
+    
+    .tooltip {
+        opacity: 0;
+        position: fixed;
+        top: -14px;
+        left: 10px;
+        padding: 0.6em 1em;
+        background: #fff;
+        text-align: left;
+        line-height: 1.4em;
+        font-size: 0.9em;
+        border: 1px solid #ddd;
+        z-index: 10;
+        transition: all 0.1s ease-out;
+        pointer-events: none;
+    }
+    
+    .access1 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 40%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access2 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 45%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access3 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 50%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access4 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 55%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access5 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 60%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access6 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 65%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access7 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 70%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access8 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 75%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access9 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 80%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+    
+    .access10 {
+        display: inline-block;
+        margin: 0;
+        position: fixed;
+        top: 85%;
+        left: 90%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #0004ff;
+        color: blue;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);
+        transition: all 0.5s;
+        cursor: pointer;
+        border-radius: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: left;
+        text-shadow: 0 0 1px blue, 0 0 1px blue, 0 0 1px blue, 0 0 1px blue;
+    }
+</style>
+
+<head>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- Color Scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <title>Does Electricity impact CO2 emission</title>
+</head>
+<div id="top">
+
+    <body style="background-color:powderblue;padding:0px 5px;">
+        <h1 style="text-align:center;color:blue;font-size:25px;">Access to Electricity in Urban, Rural and Total demarcations</h1>
+        <p>Different countries have varying levels of access to electricity. If access to electricity is in abandance, electricity wastage may occur more. Scarcity usually leads to lower consumption. This is a thought I wanted to understand and hence pursued
+            creating the third and final scene of my narrative visualization in this regard.
+        </p>
+        <p>Toggle between 10 countries by clicking on the respective buttons below on the left of your screen. Next using the dropdown menu choose between Urban, Rural and Total plots, spanning over the last three decades.
+        </p>
+
+        <!-- Initialize a select button -->
+        <select id="selectButton" style="font-style:italic; font-size : 20px; color:blue;padding:5px;box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.24);"></select>
+
+
+        <div>
+            <form method="get " action="./line3Australia.html ">
+                <button class="access1 " type="submit " style="color:orange;background-color: royalblue;font-size:large;">Australia</button>
+            </form>
+            <form method="get " action="./line3Botswana.html ">
+                <button class="access2 " type="submit " style="color:orange;background-color: royalblue;font-size:large;">Botswana</button>
+            </form>
+            <form method="get " action="./line3Brazil.html ">
+                <button class="access3 " type="submit " style="color:orange;background-color: royalblue;font-size:large; ">Brazil</button>
+            </form>
+            <form method="get " action="./line3Haiti.html ">
+                <button class="access4 " type="submit " style="color:orange;background-color: royalblue;font-size:large; ">Haiti</button>
+            </form>
+            <form method="get " action="./line3Iceland.html ">
+                <button class="access5 " type="submit " style="color:orange;background-color: royalblue;font-size:large; ">Iceland</button>
+            </form>
+            <form method="get " action="./line3Norway.html ">
+                <button class="access6 " type="submit " style="color:orange;background-color: royalblue;font-size:large;">Norway</button>
+            </form>
+            <form method="get " action="./line3Qatar.html ">
+                <button class="access7 " type="submit " style="color:orange;background-color: royalblue;font-size:large;opacity: 0.6;">Qatar</button>
+            </form>
+            <form method="get " action="./line3SriLanka.html ">
+                <button class="access8 " type="submit " style="color:orange;background-color: royalblue;font-size:large; ">Sri Lanka</button>
+            </form>
+            <form method="get " action="./line3USA.html ">
+                <button class="access9 " type="submit " style="color:orange;background-color: royalblue;font-size:large; ">USA</button>
+            </form>
+            <form method="get " action="./line3Zambia.html ">
+                <button class="access10 " type="submit " style="color:orange;background-color: royalblue;font-size:large;">Zambia</button>
+            </form>
+        </div>
+        <!-- Create a div where the graph will take place -->
+        <div id="my_dataviz"></div>
+
+        <script>
+            // set the dimensions and margins of the graph
+            var margin = {
+                    top: 10,
+                    right: 30,
+                    bottom: 130,
+                    left: 200
+                },
+                width = 1000 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            // append the svg object to the body of the page
+            var svg = d3.select("#my_dataviz")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            //Read the data
+            d3.csv("https://raw.githubusercontent.com/SahaniGoonetilleke/ABC/master/ElecticityAccessCumulativePerc.csv", function(data) {
+                var country = "Qatar"
+                    // List of groups (here I have one group per column)
+                var allGroup = d3.map(data, function(d) {
+                    return (d.Key)
+                }).keys()
+
+                // add the options to the button
+                d3.select("#selectButton")
+                    .selectAll('myOptions')
+                    .data(allGroup)
+                    .enter()
+                    .append('option')
+                    .text(function(d) {
+                        return d;
+                    }) // text showed in the menu
+                    .attr("value", function(d) {
+                        return d;
+                    }) // corresponding value returned by the button
+
+                // A color scale: one color for each group
+                var myColor = d3.scaleOrdinal()
+                    .domain(allGroup)
+                    .range(["red", "green", "purple"]); //d3.schemeSet2);
+
+                // Add X axis --> it is a date format
+                var x = d3.scaleLinear()
+                    .domain(d3.extent(data, function(d) {
+                        return d.Year;
+                    }))
+                    .range([0, width]);
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x));
+
+                // Add Y axis
+                var y = d3.scaleLinear()
+                    .domain([d3.min(data, function(d) {
+                        return +d[country];
+                    }), d3.max(data, function(d) {
+                        return +d[country];
+                    })])
+                    .range([height, 0]);
+                svg.append("g")
+                    .call(d3.axisLeft(y));
+
+                // label axes
+                const xlabel = svg.append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", -50)
+                    .attr("x", -170)
+                    .attr("font-size", 16)
+                    .attr("font-family", "sans-serif")
+                    .attr("text-anchor", "middle")
+                    .text("Access to electricity (% of population)")
+                const ylabel = svg.append("text")
+                    //.attr("transform", "rotate(-90)")
+                    .attr("y", 398)
+                    .attr("x", width - 180)
+                    .attr("font-size", 16)
+                    .attr("font-family", "sans-serif")
+                    .attr("text-anchor", "middle")
+                    .text("Year")
+
+                // Initialize line with first group of the list
+                var line = svg
+                    .append('g')
+                    .append("path")
+                    .datum(data.filter(function(d) {
+                        return d.Key == allGroup[0]
+                    }))
+                    .attr("d", d3.line()
+                        .x(function(d) {
+                            return x(d.Year)
+                        })
+                        .y(function(d) {
+                            return y(+d[country])
+                        })
+                    )
+                    .attr("stroke", function(d) {
+                        return myColor("Urban")
+                    })
+                    .style("stroke-width", 4)
+                    .style("fill", "none")
+
+                // A function that update the chart
+                function update(selectedGroup) {
+
+                    // Create new data with the selection?
+                    var dataFilter = data.filter(function(d) {
+                        return d.Key == selectedGroup
+                    })
+
+                    // Give these new data to update line
+                    line
+                        .datum(dataFilter)
+                        .transition()
+                        .duration(1000)
+                        .attr("d", d3.line()
+                            .x(function(d) {
+                                return x(d.Year)
+                            })
+                            .y(function(d) {
+                                return y(+d[country])
+                            })
+                        )
+                        .attr("stroke", function(d) {
+                            return myColor(selectedGroup)
+                        })
+                }
+
+                // When the button is changed, run the updateChart function
+                d3.select("#selectButton").on("change", function(d) {
+                    // recover the option that has been chosen
+                    var selectedOption = d3.select(this).property("value")
+                        // run the updateChart function with this selected option
+                    update(selectedOption)
+                })
+                const type = d3.annotationBadge
+
+                const annotations = [{
+                    note: {
+                        label: "Longer text to show text wrapping",
+                        title: "Annotations :)"
+                    },
+                    //can use x, y directly instead of data
+                    //data: {
+                    //    date: "18-Sep-09",
+                    //    close: 185.02
+                    //},
+                    x: 970,
+                    y: 40,
+                    dy: 137,
+                    dx: 162,
+                    subject: {
+                        text: "100%",
+                        radius: 25
+                    }
+                }]
+
+                const makeAnnotations = d3.annotation()
+                    .editMode(true)
+                    //also can set and override in the note.padding property
+                    //of the annotation object
+                    .notePadding(15)
+                    .type(type)
+                    //accessors & accessorsInverse not needed
+                    //if using x, y in annotations JSON
+                    .accessors({
+                        x: d => x(parseTime(d.date)),
+                        y: d => y(d.close)
+                    })
+                    .accessorsInverse({
+                        date: d => timeFormat(x.invert(d.x)),
+                        close: d => y.invert(d.y)
+                    })
+                    .annotations(annotations)
+
+                d3.select("svg")
+                    .append("g")
+                    .attr("class", "annotation-group")
+                    .call(makeAnnotations)
+            })
+        </script>
+    </body>
+</div>
+
+<div class="rightNext ">
+    <form method="get " action="./VizSummary.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:large;padding: 15%; ">Next</button>
+    </form>
+</div>
+<div class="leftPrev ">
+    <form method="get " action="./scatterAll.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:large;padding: 15%; ">Prev</button>
+    </form>
+</div>
+<div class="centerHome ">
+    <form method="get " action="./index.html ">
+        <button type="submit " style="color:white;background-color: blue;font-size:small;padding: 5%; ">&#127968;Home</button>
+    </form>
+</div>
+
+</html>
